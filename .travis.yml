@@ -13,4 +13,4 @@ install:
    - "cd rakudo && perl Configure.pl --gen-moar --gen-nqp --backends=moar"
    - "make && make install && cd .."
 script:
-   - prove -exec './rakudo/install/bin/perl6 -Ilib'
+   - ./rakudo/install/bin/perl6 -Ilib t/persistence.t
