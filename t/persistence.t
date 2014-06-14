@@ -9,6 +9,7 @@ class Entity is entity {}
 my $e = Entity.new;
 
 isa_ok $e, Entity;
-ok $e.does(Annotated), 'entity does';
+
+diag $e.HOW.gist;
 
 done;
