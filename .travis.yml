@@ -5,7 +5,7 @@ branch:
   only:
     - master
 before_install:
-   - export AUTOMATED_TESTING=1
+   - export AUTOMATED_TESTING=1 PATH=$PATH:rakudo/install/bin
    - git config --global user.name "TravisCI"
    - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
 install:
@@ -13,4 +13,4 @@ install:
    - "cd rakudo && perl Configure.pl --gen-moar --gen-nqp --backends=moar"
    - "make && make install && cd .."
 script:
-   - prove -exec './rakudo/install/bin/perl6 -Ilib' -r
+   - prove -exec 'perl6 -Ilib'
