@@ -15,7 +15,7 @@ diag $e.HOW;
 isa_ok $e, User;
 ok !$e.does( Annotated ), 'e should not do annotated';
 ok $e.HOW.does( $e.HOW, Annotated ), 'HOW should do annotated';
-ok ! $e.HOW.HOW.does( $e.HOW, Annotated ), 'HOW.HOW should not do annotated';
+ok ! $e.HOW.HOW.does( $e.HOW.HOW, Annotated ), 'HOW.HOW should not do annotated';
 
 #diag $e.HOW.ann.DUMP;
 
