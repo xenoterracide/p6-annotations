@@ -1,0 +1,20 @@
+language: perl
+perl:
+   - 5.18
+   - 5.16
+   - 5.14
+   - 5.12
+   - 5.10
+branch:
+  only:
+    - master
+before_install:
+   - export AUTOMATED_TESTING=1
+   - git config --global user.name "TravisCI"
+   - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
+install:
+   - "git clone git@github.com:rakudo/rakudo.git"
+   - "cd rakudo && perl Configure.pl --gen-moar --gen-nqp --backends=moar"
+   - "make && make install"
+script:
+   - prove -exec './rakudo/install/bin/perl6 -Ilib' -r
