@@ -2,9 +2,12 @@
 use v6;
 use Test;
 use Annotation::Persistence;
-is 1, 1, 'dumb test';
 
 class Entity is entity {
 }
+
+my $e = Entity.new;
+
+isa_ok $e, Entity;
 
 done;
