@@ -13,7 +13,7 @@ before_install:
    - git config --global user.name "TravisCI"
    - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
 install:
-   - "git clone git@github.com:rakudo/rakudo.git"
+   - "git clone git://github.com/rakudo/rakudo.git"
    - "cd rakudo && perl Configure.pl --gen-moar --gen-nqp --backends=moar"
    - "make && make install"
 script:
