@@ -2,8 +2,8 @@ use v6;
 use Annotated;
 module Annotation::Persistence {
 	multi sub trait_mod:<is>( Mu:U $type, :$entity! ) is export {
-		say $type.HOW;
-		$type.HOW.roles_to_compose( Annotated );
+		$type.HOW.HOW.add_role( $type.HOW, Annotated );
+#		$type.HOW.annotations.push(entity => True);
 #		$type.HOW does Annotated;
 #		say $type.HOW.annotations.^methods;
 #		$type.HOW.annotations{entity} = True;

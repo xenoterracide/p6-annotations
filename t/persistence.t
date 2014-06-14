@@ -4,12 +4,19 @@ use Test;
 use Annotated;
 use Annotation::Persistence;
 
-class Entity is entity {}
+class User is entity {
+	has $.username;
+	has %.profile;
+}
 
-my $e = Entity.new;
+my $e = User.new;
 
-isa_ok $e, Entity;
+diag $e.HOW;
+isa_ok $e, User;
+ok !$e.does( Annotated ), 'e should not do annotated';
+ok $e.HOW.does( $e.HOW, Annotated ), 'HOW should do annotated';
+ok ! $e.HOW.HOW.does( $e.HOW, Annotated ), 'HOW.HOW should not do annotated';
 
-diag $e.HOW.gist;
+#diag $e.HOW.ann.DUMP;
 
 done;
