@@ -4,5 +4,6 @@ module Annotation::Persistence {
 		$type.HOW.add_annotation($type.HOW, 'entity', True );
 	}
 	multi trait_mod:<is>( Mu:U $type, :$table! ) is export {
+		$type.HOW.add_annotation($type.HOW, 'table', $table );
 	}
 }
