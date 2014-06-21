@@ -8,10 +8,14 @@ class User is entity {
 	has %.profile;
 }
 
-my $e = User.new;
+class Value {}
 
-diag $e.HOW;
+my $e = User.new;
+my $v = Value.new;
+
 isa_ok $e, User;
+isa_ok $v, Value;
 is_deeply $e.^annotations, { entity => True };
+is_deeply $v.^annotations, {};
 
 done;
