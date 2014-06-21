@@ -3,8 +3,7 @@ use v6;
 use Test;
 use Annotation::Persistence;
 
-class User is table({ name => 'users' }) {
-}
+class User is table({ name => 'users' }) {}
 
 class Value {}
 
