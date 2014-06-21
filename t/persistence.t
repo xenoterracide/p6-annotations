@@ -12,6 +12,6 @@ my $e = User.new;
 
 diag $e.HOW;
 isa_ok $e, User;
-say $e.^annotations;
+is_deeply $e.^annotations, { entity => True };
 
 done;
